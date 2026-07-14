@@ -1,5 +1,5 @@
 import json
-from datetime import time
+import time
 
 import requests
 from confluent_kafka import Producer

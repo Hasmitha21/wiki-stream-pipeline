@@ -5719,3 +5719,673 @@ having count(*) > 1
 [0m18:45:23.612096 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x75498f71e5a0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x75498d3fc860>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x75498dddd220>]}
 [0m18:45:23.612898 [debug] [MainThread]: Flushing usage events
 [0m18:45:23.922057 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m19:00:08.765790 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7dbe1bc532f0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7dbe1aa13f80>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7dbe1ca96180>]}
+
+
+============================== 19:00:08.780162 | c5f043a3-1d41-4d5f-8621-923415de80f0 ==============================
+[0m19:00:08.780162 [info ] [MainThread]: Running with dbt=1.12.0-rc2
+[0m19:00:08.782432 [debug] [MainThread]: running dbt with arguments {'static_parser': 'True', 'log_path': '/opt/airflow/transform/logs', 'fail_fast': 'False', 'version_check': 'True', 'quiet': 'False', 'send_anonymous_usage_stats': 'True', 'empty': 'False', 'use_experimental_parser': 'False', 'partial_parse': 'True', 'log_format': 'default', 'cache_selected_only': 'False', 'log_cache_events': 'False', 'no_print': 'None', 'indirect_selection': 'eager', 'warn_error': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'introspect': 'True', 'invocation_command': 'dbt run --profiles-dir .', 'write_json': 'True', 'target_path': 'None', 'debug': 'False', 'use_colors': 'True', 'maximum_seed_size_mib': '1', 'profiles_dir': '.', 'printer_width': '80'}
+[0m19:00:09.070207 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'c5f043a3-1d41-4d5f-8621-923415de80f0', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7dbe1a764a40>]}
+[0m19:00:09.175709 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'c5f043a3-1d41-4d5f-8621-923415de80f0', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7dbe1a890830>]}
+[0m19:00:09.178890 [info ] [MainThread]: Registered adapter: postgres=1.10.2
+[0m19:00:09.330598 [debug] [MainThread]: checksum: 95757c35769a41a8f2d196d7c0593921a75b4cbdc86aabac951c27eafb435190, vars: {}, profile: wiki_transform, target: dev, version: 1.12.0rc2
+[0m19:00:09.571518 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m19:00:09.572543 [debug] [MainThread]: Nothing changed, skipping partial parsing.
+[0m19:00:09.573360 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m19:00:09.637610 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'c5f043a3-1d41-4d5f-8621-923415de80f0', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7dbe19b6dee0>]}
+[0m19:00:09.792298 [debug] [MainThread]: Wrote artifact WritableManifest to /opt/airflow/transform/target/manifest.json
+[0m19:00:09.799655 [debug] [MainThread]: Wrote artifact SemanticManifest to /opt/airflow/transform/target/semantic_manifest.json
+[0m19:00:09.818778 [debug] [MainThread]: Wrote artifact OsiDocument to /opt/airflow/transform/target/osi_document.json
+[0m19:00:09.844552 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'c5f043a3-1d41-4d5f-8621-923415de80f0', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7dbe193c2a20>]}
+[0m19:00:09.846029 [info ] [MainThread]: Found 2 models, 7 data tests, 1 source, 475 macros
+[0m19:00:09.847235 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'c5f043a3-1d41-4d5f-8621-923415de80f0', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7dbe193406e0>]}
+[0m19:00:09.850607 [info ] [MainThread]: 
+[0m19:00:09.851738 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m19:00:09.852430 [info ] [MainThread]: 
+[0m19:00:09.853540 [debug] [MainThread]: Acquiring new postgres connection 'master'
+[0m19:00:09.859303 [debug] [ThreadPool]: Acquiring new postgres connection 'list_wiki'
+[0m19:00:09.910982 [debug] [ThreadPool]: Using postgres connection "list_wiki"
+[0m19:00:09.913101 [debug] [ThreadPool]: On list_wiki: /* {"app": "dbt", "dbt_version": "1.12.0rc2", "profile_name": "wiki_transform", "target_name": "dev", "connection_name": "list_wiki"} */
+
+    select distinct nspname from pg_namespace
+  
+[0m19:00:09.914396 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m19:00:09.928253 [debug] [ThreadPool]: SQL status: SELECT 6 in 0.014 seconds
+[0m19:00:09.931002 [debug] [ThreadPool]: On list_wiki: Close
+[0m19:00:09.934247 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_wiki, now list_wiki_analytics)
+[0m19:00:09.943044 [debug] [ThreadPool]: Using postgres connection "list_wiki_analytics"
+[0m19:00:09.944372 [debug] [ThreadPool]: On list_wiki_analytics: /* {"app": "dbt", "dbt_version": "1.12.0rc2", "profile_name": "wiki_transform", "target_name": "dev", "connection_name": "list_wiki_analytics"} */
+select
+      'wiki' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'analytics'
+    union all
+    select
+      'wiki' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'analytics'
+    union all
+    select
+      'wiki' as database,
+      matviewname as name,
+      schemaname as schema,
+      'materialized_view' as type
+    from pg_matviews
+    where schemaname ilike 'analytics'
+  
+[0m19:00:09.945387 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m19:00:09.957941 [debug] [ThreadPool]: SQL status: SELECT 2 in 0.012 seconds
+[0m19:00:09.960449 [debug] [ThreadPool]: On list_wiki_analytics: ROLLBACK
+[0m19:00:09.961476 [debug] [ThreadPool]: On list_wiki_analytics: Close
+[0m19:00:09.969596 [debug] [MainThread]: Using postgres connection "master"
+[0m19:00:09.970554 [debug] [MainThread]: On master: /* {"app": "dbt", "dbt_version": "1.12.0rc2", "profile_name": "wiki_transform", "target_name": "dev", "connection_name": "master"} */
+select distinct
+        dependent_namespace.nspname as dependent_schema,
+        dependent_class.relname as dependent_name,
+        referenced_namespace.nspname as referenced_schema,
+        referenced_class.relname as referenced_name
+
+    -- Query for views: views are entries in pg_class with an entry in pg_rewrite, but we avoid
+    -- a seq scan on pg_rewrite by leveraging the fact there is an "internal" row in pg_depend for
+    -- the view...
+    from pg_class as dependent_class
+    join pg_namespace as dependent_namespace on dependent_namespace.oid = dependent_class.relnamespace
+    join pg_depend as dependent_depend on dependent_depend.refobjid = dependent_class.oid
+        and dependent_depend.classid = 'pg_rewrite'::regclass
+        and dependent_depend.refclassid = 'pg_class'::regclass
+        and dependent_depend.deptype = 'i'
+
+    -- ... and via pg_depend (that has a row per column, hence the need for "distinct" above, and
+    -- making sure to exclude the internal row to avoid a view appearing to depend on itself)...
+    join pg_depend as joining_depend on joining_depend.objid = dependent_depend.objid
+        and joining_depend.classid = 'pg_rewrite'::regclass
+        and joining_depend.refclassid = 'pg_class'::regclass
+        and joining_depend.refobjid != dependent_depend.refobjid
+
+    -- ... we can find the tables they query from in pg_class, but excluding system tables. Note we
+    -- don't need need to exclude _dependent_ system tables, because they only query from other
+    -- system tables, and so are automatically excluded by excluding _referenced_ system tables
+    join pg_class as referenced_class on referenced_class.oid = joining_depend.refobjid
+    join pg_namespace as referenced_namespace on referenced_namespace.oid = referenced_class.relnamespace
+        and referenced_namespace.nspname != 'information_schema'
+        and referenced_namespace.nspname not like 'pg\_%'
+
+    order by
+        dependent_schema, dependent_name, referenced_schema, referenced_name;
+[0m19:00:09.971314 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m19:00:09.985177 [debug] [MainThread]: SQL status: SELECT 1 in 0.014 seconds
+[0m19:00:09.987205 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'c5f043a3-1d41-4d5f-8621-923415de80f0', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7dbe19342ff0>]}
+[0m19:00:09.988017 [debug] [MainThread]: On master: ROLLBACK
+[0m19:00:09.988899 [debug] [MainThread]: On master: COMMIT
+[0m19:00:09.989444 [debug] [MainThread]: Using postgres connection "master"
+[0m19:00:09.989910 [debug] [MainThread]: On master: COMMIT
+[0m19:00:09.990830 [debug] [MainThread]: SQL status: COMMIT in 0.000 seconds
+[0m19:00:09.991355 [debug] [MainThread]: On master: Close
+[0m19:00:09.997374 [debug] [Thread-1 (]: Began running node model.wiki_transform.stg_wiki_events
+[0m19:00:09.998201 [info ] [Thread-1 (]: 1 of 2 START sql view model analytics.stg_wiki_events .......................... [RUN]
+[0m19:00:09.999013 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_wiki_analytics, now model.wiki_transform.stg_wiki_events)
+[0m19:00:09.999699 [debug] [Thread-1 (]: Began compiling node model.wiki_transform.stg_wiki_events
+[0m19:00:10.008254 [debug] [Thread-1 (]: Writing injected SQL for node "model.wiki_transform.stg_wiki_events"
+[0m19:00:10.018811 [debug] [Thread-1 (]: Began executing node model.wiki_transform.stg_wiki_events
+[0m19:00:10.061942 [debug] [Thread-1 (]: Writing runtime sql for node "model.wiki_transform.stg_wiki_events"
+[0m19:00:10.073430 [debug] [Thread-1 (]: Using postgres connection "model.wiki_transform.stg_wiki_events"
+[0m19:00:10.074655 [debug] [Thread-1 (]: On model.wiki_transform.stg_wiki_events: /* {"app": "dbt", "dbt_version": "1.12.0rc2", "profile_name": "wiki_transform", "target_name": "dev", "node_id": "model.wiki_transform.stg_wiki_events"} */
+
+  create view "wiki"."analytics"."stg_wiki_events__dbt_tmp"
+    
+    
+  as (
+    with ranked as (
+    select
+        *,
+        row_number() over (
+            partition by event->'meta'->>'id'
+            order by ingested_at
+        ) as rn
+    from "wiki"."raw"."wiki_events"
+    where event->>'type' in ('edit', 'new')
+)
+select
+    id,
+    event->'meta'->>'id'                        as event_id,
+    event->>'title'                              as title,
+    event->>'wiki'                               as wiki,
+    event->>'type'                               as event_type,
+    event->>'user'                               as editor,
+    (event->>'bot')::boolean                     as is_bot,
+    to_timestamp((event->>'timestamp')::bigint)  as event_ts,
+    (event->'length'->>'new')::int
+      - coalesce((event->'length'->>'old')::int, 0) as bytes_changed,
+    ingested_at
+from ranked
+where rn = 1
+  );
+[0m19:00:10.075474 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m19:00:10.089770 [debug] [Thread-1 (]: SQL status: CREATE VIEW in 0.014 seconds
+[0m19:00:10.097983 [debug] [Thread-1 (]: Using postgres connection "model.wiki_transform.stg_wiki_events"
+[0m19:00:10.098927 [debug] [Thread-1 (]: On model.wiki_transform.stg_wiki_events: /* {"app": "dbt", "dbt_version": "1.12.0rc2", "profile_name": "wiki_transform", "target_name": "dev", "node_id": "model.wiki_transform.stg_wiki_events"} */
+alter table "wiki"."analytics"."stg_wiki_events" rename to "stg_wiki_events__dbt_backup"
+[0m19:00:10.101655 [debug] [Thread-1 (]: SQL status: ALTER TABLE in 0.002 seconds
+[0m19:00:10.107079 [debug] [Thread-1 (]: Using postgres connection "model.wiki_transform.stg_wiki_events"
+[0m19:00:10.107854 [debug] [Thread-1 (]: On model.wiki_transform.stg_wiki_events: /* {"app": "dbt", "dbt_version": "1.12.0rc2", "profile_name": "wiki_transform", "target_name": "dev", "node_id": "model.wiki_transform.stg_wiki_events"} */
+alter table "wiki"."analytics"."stg_wiki_events__dbt_tmp" rename to "stg_wiki_events"
+[0m19:00:10.109120 [debug] [Thread-1 (]: SQL status: ALTER TABLE in 0.001 seconds
+[0m19:00:10.260367 [debug] [Thread-1 (]: On model.wiki_transform.stg_wiki_events: COMMIT
+[0m19:00:10.261546 [debug] [Thread-1 (]: Using postgres connection "model.wiki_transform.stg_wiki_events"
+[0m19:00:10.262279 [debug] [Thread-1 (]: On model.wiki_transform.stg_wiki_events: COMMIT
+[0m19:00:10.266874 [debug] [Thread-1 (]: SQL status: COMMIT in 0.004 seconds
+[0m19:00:10.274413 [debug] [Thread-1 (]: Applying DROP to: "wiki"."analytics"."stg_wiki_events__dbt_backup"
+[0m19:00:10.281869 [debug] [Thread-1 (]: Using postgres connection "model.wiki_transform.stg_wiki_events"
+[0m19:00:10.282726 [debug] [Thread-1 (]: On model.wiki_transform.stg_wiki_events: /* {"app": "dbt", "dbt_version": "1.12.0rc2", "profile_name": "wiki_transform", "target_name": "dev", "node_id": "model.wiki_transform.stg_wiki_events"} */
+drop view if exists "wiki"."analytics"."stg_wiki_events__dbt_backup" cascade
+[0m19:00:10.287167 [debug] [Thread-1 (]: SQL status: DROP VIEW in 0.004 seconds
+[0m19:00:10.291457 [debug] [Thread-1 (]: On model.wiki_transform.stg_wiki_events: Close
+[0m19:00:10.294444 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'c5f043a3-1d41-4d5f-8621-923415de80f0', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7dbe1797cf80>]}
+[0m19:00:10.295618 [info ] [Thread-1 (]: 1 of 2 OK created sql view model analytics.stg_wiki_events ..................... [[32mCREATE VIEW[0m in 0.29s]
+[0m19:00:10.296691 [debug] [Thread-1 (]: Finished running node model.wiki_transform.stg_wiki_events
+[0m19:00:10.298246 [debug] [Thread-3 (]: Began running node model.wiki_transform.fct_edits_per_minute
+[0m19:00:10.299164 [info ] [Thread-3 (]: 2 of 2 START sql table model analytics.fct_edits_per_minute .................... [RUN]
+[0m19:00:10.300113 [debug] [Thread-3 (]: Acquiring new postgres connection 'model.wiki_transform.fct_edits_per_minute'
+[0m19:00:10.300752 [debug] [Thread-3 (]: Began compiling node model.wiki_transform.fct_edits_per_minute
+[0m19:00:10.304196 [debug] [Thread-3 (]: Writing injected SQL for node "model.wiki_transform.fct_edits_per_minute"
+[0m19:00:10.313991 [debug] [Thread-3 (]: Began executing node model.wiki_transform.fct_edits_per_minute
+[0m19:00:10.336152 [debug] [Thread-3 (]: Writing runtime sql for node "model.wiki_transform.fct_edits_per_minute"
+[0m19:00:10.345798 [debug] [Thread-3 (]: Using postgres connection "model.wiki_transform.fct_edits_per_minute"
+[0m19:00:10.346848 [debug] [Thread-3 (]: On model.wiki_transform.fct_edits_per_minute: /* {"app": "dbt", "dbt_version": "1.12.0rc2", "profile_name": "wiki_transform", "target_name": "dev", "node_id": "model.wiki_transform.fct_edits_per_minute"} */
+
+  
+    
+
+  create  table "wiki"."analytics"."fct_edits_per_minute__dbt_tmp"
+  
+  
+    as
+  
+  (
+    select
+    date_trunc('minute', event_ts)        as minute,
+    wiki,
+    count(*)                              as edit_count,
+    count(*) filter (where is_bot)        as bot_edits,
+    sum(bytes_changed)                    as net_bytes_changed
+from "wiki"."analytics"."stg_wiki_events"
+group by 1, 2
+  );
+  
+[0m19:00:10.347473 [debug] [Thread-3 (]: Opening a new connection, currently in state init
+[0m19:00:10.935548 [debug] [Thread-3 (]: SQL status: SELECT 1869 in 0.588 seconds
+[0m19:00:10.945967 [debug] [Thread-3 (]: Using postgres connection "model.wiki_transform.fct_edits_per_minute"
+[0m19:00:10.947699 [debug] [Thread-3 (]: On model.wiki_transform.fct_edits_per_minute: /* {"app": "dbt", "dbt_version": "1.12.0rc2", "profile_name": "wiki_transform", "target_name": "dev", "node_id": "model.wiki_transform.fct_edits_per_minute"} */
+alter table "wiki"."analytics"."fct_edits_per_minute" rename to "fct_edits_per_minute__dbt_backup"
+[0m19:00:10.949813 [debug] [Thread-3 (]: SQL status: ALTER TABLE in 0.001 seconds
+[0m19:00:10.954057 [debug] [Thread-3 (]: Using postgres connection "model.wiki_transform.fct_edits_per_minute"
+[0m19:00:10.954857 [debug] [Thread-3 (]: On model.wiki_transform.fct_edits_per_minute: /* {"app": "dbt", "dbt_version": "1.12.0rc2", "profile_name": "wiki_transform", "target_name": "dev", "node_id": "model.wiki_transform.fct_edits_per_minute"} */
+alter table "wiki"."analytics"."fct_edits_per_minute__dbt_tmp" rename to "fct_edits_per_minute"
+[0m19:00:10.956382 [debug] [Thread-3 (]: SQL status: ALTER TABLE in 0.001 seconds
+[0m19:00:10.958704 [debug] [Thread-3 (]: On model.wiki_transform.fct_edits_per_minute: COMMIT
+[0m19:00:10.959402 [debug] [Thread-3 (]: Using postgres connection "model.wiki_transform.fct_edits_per_minute"
+[0m19:00:10.960003 [debug] [Thread-3 (]: On model.wiki_transform.fct_edits_per_minute: COMMIT
+[0m19:00:10.965348 [debug] [Thread-3 (]: SQL status: COMMIT in 0.005 seconds
+[0m19:00:10.969958 [debug] [Thread-3 (]: Applying DROP to: "wiki"."analytics"."fct_edits_per_minute__dbt_backup"
+[0m19:00:10.976385 [debug] [Thread-3 (]: Using postgres connection "model.wiki_transform.fct_edits_per_minute"
+[0m19:00:10.977172 [debug] [Thread-3 (]: On model.wiki_transform.fct_edits_per_minute: /* {"app": "dbt", "dbt_version": "1.12.0rc2", "profile_name": "wiki_transform", "target_name": "dev", "node_id": "model.wiki_transform.fct_edits_per_minute"} */
+drop table if exists "wiki"."analytics"."fct_edits_per_minute__dbt_backup" cascade
+[0m19:00:10.982593 [debug] [Thread-3 (]: SQL status: DROP TABLE in 0.005 seconds
+[0m19:00:10.985265 [debug] [Thread-3 (]: On model.wiki_transform.fct_edits_per_minute: Close
+[0m19:00:10.986438 [debug] [Thread-3 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'c5f043a3-1d41-4d5f-8621-923415de80f0', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7dbe19340890>]}
+[0m19:00:10.987394 [info ] [Thread-3 (]: 2 of 2 OK created sql table model analytics.fct_edits_per_minute ............... [[32mSELECT 1869[0m in 0.69s]
+[0m19:00:10.988351 [debug] [Thread-3 (]: Finished running node model.wiki_transform.fct_edits_per_minute
+[0m19:00:10.991553 [debug] [MainThread]: On master: COMMIT
+[0m19:00:10.992384 [debug] [MainThread]: Using postgres connection "master"
+[0m19:00:10.992891 [debug] [MainThread]: On master: COMMIT
+[0m19:00:10.993478 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m19:00:11.002348 [debug] [MainThread]: SQL status: COMMIT in 0.009 seconds
+[0m19:00:11.003361 [debug] [MainThread]: On master: Close
+[0m19:00:11.004346 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m19:00:11.004901 [debug] [MainThread]: Connection 'model.wiki_transform.stg_wiki_events' was properly closed.
+[0m19:00:11.005488 [debug] [MainThread]: Connection 'model.wiki_transform.fct_edits_per_minute' was properly closed.
+[0m19:00:11.006162 [info ] [MainThread]: 
+[0m19:00:11.006901 [info ] [MainThread]: Finished running 1 table model, 1 view model in 0 hours 0 minutes and 1.15 seconds (1.15s).
+[0m19:00:11.008142 [debug] [MainThread]: Command end result
+[0m19:00:11.070965 [debug] [MainThread]: Wrote artifact WritableManifest to /opt/airflow/transform/target/manifest.json
+[0m19:00:11.080679 [debug] [MainThread]: Wrote artifact SemanticManifest to /opt/airflow/transform/target/semantic_manifest.json
+[0m19:00:11.089276 [debug] [MainThread]: Wrote artifact OsiDocument to /opt/airflow/transform/target/osi_document.json
+[0m19:00:11.102933 [debug] [MainThread]: Wrote artifact RunExecutionResult to /opt/airflow/transform/target/run_results.json
+[0m19:00:11.103695 [info ] [MainThread]: 
+[0m19:00:11.104540 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m19:00:11.105235 [info ] [MainThread]: 
+[0m19:00:11.105843 [info ] [MainThread]: Done. PASS=2 WARN=0 ERROR=0 SKIP=0 NO-OP=0 REUSED=0 TOTAL=2
+[0m19:00:11.107382 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 2.5945013, "process_in_blocks": "0", "process_kernel_time": 0.669579, "process_mem_max_rss": "136056", "process_out_blocks": "0", "process_user_time": 3.985402}
+[0m19:00:11.108170 [debug] [MainThread]: Command `dbt run` succeeded at 19:00:11.108007 after 2.60 seconds
+[0m19:00:11.108792 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7dbe1c3c18e0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7dbe17947650>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7dbe17947fb0>]}
+[0m19:00:11.109389 [debug] [MainThread]: Flushing usage events
+[0m19:00:11.462899 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m19:00:20.135150 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x73b8f5f8e2d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x73b8f5aa7ef0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x73b8f6bdd580>]}
+
+
+============================== 19:00:20.148606 | bae28f7a-4845-4c12-b520-f32b7d2418ef ==============================
+[0m19:00:20.148606 [info ] [MainThread]: Running with dbt=1.12.0-rc2
+[0m19:00:20.149892 [debug] [MainThread]: running dbt with arguments {'debug': 'False', 'log_cache_events': 'False', 'quiet': 'False', 'static_parser': 'True', 'cache_selected_only': 'False', 'log_format': 'default', 'warn_error': 'None', 'target_path': 'None', 'fail_fast': 'False', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'introspect': 'True', 'empty': 'None', 'partial_parse': 'True', 'maximum_seed_size_mib': '1', 'invocation_command': 'dbt test --profiles-dir .', 'version_check': 'True', 'use_experimental_parser': 'False', 'write_json': 'True', 'indirect_selection': 'eager', 'no_print': 'None', 'profiles_dir': '.', 'log_path': '/opt/airflow/transform/logs', 'use_colors': 'True', 'printer_width': '80', 'send_anonymous_usage_stats': 'True'}
+[0m19:00:20.383757 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'bae28f7a-4845-4c12-b520-f32b7d2418ef', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x73b8f42d0d10>]}
+[0m19:00:20.459184 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'bae28f7a-4845-4c12-b520-f32b7d2418ef', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x73b8f48336b0>]}
+[0m19:00:20.461323 [info ] [MainThread]: Registered adapter: postgres=1.10.2
+[0m19:00:20.594406 [debug] [MainThread]: checksum: 95757c35769a41a8f2d196d7c0593921a75b4cbdc86aabac951c27eafb435190, vars: {}, profile: wiki_transform, target: dev, version: 1.12.0rc2
+[0m19:00:20.846474 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m19:00:20.847452 [debug] [MainThread]: Nothing changed, skipping partial parsing.
+[0m19:00:20.848221 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m19:00:20.914038 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'bae28f7a-4845-4c12-b520-f32b7d2418ef', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x73b8f3f22690>]}
+[0m19:00:21.056278 [debug] [MainThread]: Wrote artifact WritableManifest to /opt/airflow/transform/target/manifest.json
+[0m19:00:21.064315 [debug] [MainThread]: Wrote artifact SemanticManifest to /opt/airflow/transform/target/semantic_manifest.json
+[0m19:00:21.085576 [debug] [MainThread]: Wrote artifact OsiDocument to /opt/airflow/transform/target/osi_document.json
+[0m19:00:21.134428 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'bae28f7a-4845-4c12-b520-f32b7d2418ef', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x73b8f2b1efc0>]}
+[0m19:00:21.135378 [info ] [MainThread]: Found 2 models, 7 data tests, 1 source, 475 macros
+[0m19:00:21.136124 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'bae28f7a-4845-4c12-b520-f32b7d2418ef', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x73b8f3f4e720>]}
+[0m19:00:21.138742 [info ] [MainThread]: 
+[0m19:00:21.139456 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m19:00:21.140105 [info ] [MainThread]: 
+[0m19:00:21.141187 [debug] [MainThread]: Acquiring new postgres connection 'master'
+[0m19:00:21.148855 [debug] [ThreadPool]: Acquiring new postgres connection 'list_wiki_analytics'
+[0m19:00:21.198755 [debug] [ThreadPool]: Using postgres connection "list_wiki_analytics"
+[0m19:00:21.200203 [debug] [ThreadPool]: On list_wiki_analytics: /* {"app": "dbt", "dbt_version": "1.12.0rc2", "profile_name": "wiki_transform", "target_name": "dev", "connection_name": "list_wiki_analytics"} */
+select
+      'wiki' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'analytics'
+    union all
+    select
+      'wiki' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'analytics'
+    union all
+    select
+      'wiki' as database,
+      matviewname as name,
+      schemaname as schema,
+      'materialized_view' as type
+    from pg_matviews
+    where schemaname ilike 'analytics'
+  
+[0m19:00:21.201219 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m19:00:21.214950 [debug] [ThreadPool]: SQL status: SELECT 2 in 0.014 seconds
+[0m19:00:21.217972 [debug] [ThreadPool]: On list_wiki_analytics: ROLLBACK
+[0m19:00:21.220429 [debug] [ThreadPool]: On list_wiki_analytics: Close
+[0m19:00:21.233030 [debug] [MainThread]: Using postgres connection "master"
+[0m19:00:21.234579 [debug] [MainThread]: On master: /* {"app": "dbt", "dbt_version": "1.12.0rc2", "profile_name": "wiki_transform", "target_name": "dev", "connection_name": "master"} */
+select distinct
+        dependent_namespace.nspname as dependent_schema,
+        dependent_class.relname as dependent_name,
+        referenced_namespace.nspname as referenced_schema,
+        referenced_class.relname as referenced_name
+
+    -- Query for views: views are entries in pg_class with an entry in pg_rewrite, but we avoid
+    -- a seq scan on pg_rewrite by leveraging the fact there is an "internal" row in pg_depend for
+    -- the view...
+    from pg_class as dependent_class
+    join pg_namespace as dependent_namespace on dependent_namespace.oid = dependent_class.relnamespace
+    join pg_depend as dependent_depend on dependent_depend.refobjid = dependent_class.oid
+        and dependent_depend.classid = 'pg_rewrite'::regclass
+        and dependent_depend.refclassid = 'pg_class'::regclass
+        and dependent_depend.deptype = 'i'
+
+    -- ... and via pg_depend (that has a row per column, hence the need for "distinct" above, and
+    -- making sure to exclude the internal row to avoid a view appearing to depend on itself)...
+    join pg_depend as joining_depend on joining_depend.objid = dependent_depend.objid
+        and joining_depend.classid = 'pg_rewrite'::regclass
+        and joining_depend.refclassid = 'pg_class'::regclass
+        and joining_depend.refobjid != dependent_depend.refobjid
+
+    -- ... we can find the tables they query from in pg_class, but excluding system tables. Note we
+    -- don't need need to exclude _dependent_ system tables, because they only query from other
+    -- system tables, and so are automatically excluded by excluding _referenced_ system tables
+    join pg_class as referenced_class on referenced_class.oid = joining_depend.refobjid
+    join pg_namespace as referenced_namespace on referenced_namespace.oid = referenced_class.relnamespace
+        and referenced_namespace.nspname != 'information_schema'
+        and referenced_namespace.nspname not like 'pg\_%'
+
+    order by
+        dependent_schema, dependent_name, referenced_schema, referenced_name;
+[0m19:00:21.235792 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m19:00:21.250629 [debug] [MainThread]: SQL status: SELECT 1 in 0.015 seconds
+[0m19:00:21.252990 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'bae28f7a-4845-4c12-b520-f32b7d2418ef', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x73b8f6f6b770>]}
+[0m19:00:21.253881 [debug] [MainThread]: On master: ROLLBACK
+[0m19:00:21.255097 [debug] [MainThread]: On master: COMMIT
+[0m19:00:21.255720 [debug] [MainThread]: Using postgres connection "master"
+[0m19:00:21.256276 [debug] [MainThread]: On master: COMMIT
+[0m19:00:21.257126 [debug] [MainThread]: SQL status: COMMIT in 0.000 seconds
+[0m19:00:21.257717 [debug] [MainThread]: On master: Close
+[0m19:00:21.264676 [debug] [Thread-1 (]: Began running node test.wiki_transform.accepted_values_stg_wiki_events_event_type__edit__new.05ec114aff
+[0m19:00:21.265365 [debug] [Thread-2 (]: Began running node test.wiki_transform.not_null_fct_edits_per_minute_edit_count.299c0c3bd2
+[0m19:00:21.265885 [debug] [Thread-3 (]: Began running node test.wiki_transform.not_null_fct_edits_per_minute_minute.d76c8ab6e9
+[0m19:00:21.266825 [debug] [Thread-4 (]: Began running node test.wiki_transform.not_null_stg_wiki_events_event_id.a383658aa6
+[0m19:00:21.266400 [info ] [Thread-1 (]: 1 of 7 START test accepted_values_stg_wiki_events_event_type__edit__new ........ [RUN]
+[0m19:00:21.267688 [info ] [Thread-2 (]: 2 of 7 START test not_null_fct_edits_per_minute_edit_count ..................... [RUN]
+[0m19:00:21.268399 [info ] [Thread-3 (]: 3 of 7 START test not_null_fct_edits_per_minute_minute ......................... [RUN]
+[0m19:00:21.269019 [info ] [Thread-4 (]: 4 of 7 START test not_null_stg_wiki_events_event_id ............................ [RUN]
+[0m19:00:21.269802 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_wiki_analytics, now test.wiki_transform.accepted_values_stg_wiki_events_event_type__edit__new.05ec114aff)
+[0m19:00:21.270827 [debug] [Thread-2 (]: Acquiring new postgres connection 'test.wiki_transform.not_null_fct_edits_per_minute_edit_count.299c0c3bd2'
+[0m19:00:21.271563 [debug] [Thread-3 (]: Acquiring new postgres connection 'test.wiki_transform.not_null_fct_edits_per_minute_minute.d76c8ab6e9'
+[0m19:00:21.272312 [debug] [Thread-4 (]: Acquiring new postgres connection 'test.wiki_transform.not_null_stg_wiki_events_event_id.a383658aa6'
+[0m19:00:21.272967 [debug] [Thread-1 (]: Began compiling node test.wiki_transform.accepted_values_stg_wiki_events_event_type__edit__new.05ec114aff
+[0m19:00:21.273600 [debug] [Thread-2 (]: Began compiling node test.wiki_transform.not_null_fct_edits_per_minute_edit_count.299c0c3bd2
+[0m19:00:21.274235 [debug] [Thread-3 (]: Began compiling node test.wiki_transform.not_null_fct_edits_per_minute_minute.d76c8ab6e9
+[0m19:00:21.274906 [debug] [Thread-4 (]: Began compiling node test.wiki_transform.not_null_stg_wiki_events_event_id.a383658aa6
+[0m19:00:21.306226 [debug] [Thread-2 (]: Writing injected SQL for node "test.wiki_transform.not_null_fct_edits_per_minute_edit_count.299c0c3bd2"
+[0m19:00:21.397019 [debug] [Thread-1 (]: Writing injected SQL for node "test.wiki_transform.accepted_values_stg_wiki_events_event_type__edit__new.05ec114aff"
+[0m19:00:21.400175 [debug] [Thread-3 (]: Writing injected SQL for node "test.wiki_transform.not_null_fct_edits_per_minute_minute.d76c8ab6e9"
+[0m19:00:21.404777 [debug] [Thread-4 (]: Writing injected SQL for node "test.wiki_transform.not_null_stg_wiki_events_event_id.a383658aa6"
+[0m19:00:21.414592 [debug] [Thread-4 (]: Began executing node test.wiki_transform.not_null_stg_wiki_events_event_id.a383658aa6
+[0m19:00:21.415698 [debug] [Thread-1 (]: Began executing node test.wiki_transform.accepted_values_stg_wiki_events_event_type__edit__new.05ec114aff
+[0m19:00:21.439699 [debug] [Thread-2 (]: Began executing node test.wiki_transform.not_null_fct_edits_per_minute_edit_count.299c0c3bd2
+[0m19:00:21.440498 [debug] [Thread-3 (]: Began executing node test.wiki_transform.not_null_fct_edits_per_minute_minute.d76c8ab6e9
+[0m19:00:21.448013 [debug] [Thread-4 (]: Writing runtime sql for node "test.wiki_transform.not_null_stg_wiki_events_event_id.a383658aa6"
+[0m19:00:21.460300 [debug] [Thread-2 (]: Writing runtime sql for node "test.wiki_transform.not_null_fct_edits_per_minute_edit_count.299c0c3bd2"
+[0m19:00:21.465227 [debug] [Thread-1 (]: Writing runtime sql for node "test.wiki_transform.accepted_values_stg_wiki_events_event_type__edit__new.05ec114aff"
+[0m19:00:21.468356 [debug] [Thread-3 (]: Writing runtime sql for node "test.wiki_transform.not_null_fct_edits_per_minute_minute.d76c8ab6e9"
+[0m19:00:21.475211 [debug] [Thread-3 (]: Using postgres connection "test.wiki_transform.not_null_fct_edits_per_minute_minute.d76c8ab6e9"
+[0m19:00:21.476017 [debug] [Thread-2 (]: Using postgres connection "test.wiki_transform.not_null_fct_edits_per_minute_edit_count.299c0c3bd2"
+[0m19:00:21.476608 [debug] [Thread-3 (]: On test.wiki_transform.not_null_fct_edits_per_minute_minute.d76c8ab6e9: /* {"app": "dbt", "dbt_version": "1.12.0rc2", "profile_name": "wiki_transform", "target_name": "dev", "node_id": "test.wiki_transform.not_null_fct_edits_per_minute_minute.d76c8ab6e9"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select minute
+from "wiki"."analytics"."fct_edits_per_minute"
+where minute is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m19:00:21.477565 [debug] [Thread-2 (]: On test.wiki_transform.not_null_fct_edits_per_minute_edit_count.299c0c3bd2: /* {"app": "dbt", "dbt_version": "1.12.0rc2", "profile_name": "wiki_transform", "target_name": "dev", "node_id": "test.wiki_transform.not_null_fct_edits_per_minute_edit_count.299c0c3bd2"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select edit_count
+from "wiki"."analytics"."fct_edits_per_minute"
+where edit_count is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m19:00:21.478213 [debug] [Thread-1 (]: Using postgres connection "test.wiki_transform.accepted_values_stg_wiki_events_event_type__edit__new.05ec114aff"
+[0m19:00:21.478775 [debug] [Thread-3 (]: Opening a new connection, currently in state init
+[0m19:00:21.479484 [debug] [Thread-2 (]: Opening a new connection, currently in state init
+[0m19:00:21.480077 [debug] [Thread-4 (]: Using postgres connection "test.wiki_transform.not_null_stg_wiki_events_event_id.a383658aa6"
+[0m19:00:21.480521 [debug] [Thread-1 (]: On test.wiki_transform.accepted_values_stg_wiki_events_event_type__edit__new.05ec114aff: /* {"app": "dbt", "dbt_version": "1.12.0rc2", "profile_name": "wiki_transform", "target_name": "dev", "node_id": "test.wiki_transform.accepted_values_stg_wiki_events_event_type__edit__new.05ec114aff"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+with all_values as (
+
+    select
+        event_type as value_field,
+        count(*) as n_records
+
+    from "wiki"."analytics"."stg_wiki_events"
+    group by event_type
+
+)
+
+select *
+from all_values
+where value_field not in (
+    'edit','new'
+)
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m19:00:21.481944 [debug] [Thread-4 (]: On test.wiki_transform.not_null_stg_wiki_events_event_id.a383658aa6: /* {"app": "dbt", "dbt_version": "1.12.0rc2", "profile_name": "wiki_transform", "target_name": "dev", "node_id": "test.wiki_transform.not_null_stg_wiki_events_event_id.a383658aa6"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select event_id
+from "wiki"."analytics"."stg_wiki_events"
+where event_id is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m19:00:21.482636 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m19:00:21.483491 [debug] [Thread-4 (]: Opening a new connection, currently in state init
+[0m19:00:21.491119 [debug] [Thread-2 (]: SQL status: SELECT 1 in 0.011 seconds
+[0m19:00:21.492022 [debug] [Thread-3 (]: SQL status: SELECT 1 in 0.013 seconds
+[0m19:00:21.498615 [debug] [Thread-2 (]: On test.wiki_transform.not_null_fct_edits_per_minute_edit_count.299c0c3bd2: ROLLBACK
+[0m19:00:21.501210 [debug] [Thread-3 (]: On test.wiki_transform.not_null_fct_edits_per_minute_minute.d76c8ab6e9: ROLLBACK
+[0m19:00:21.504879 [debug] [Thread-2 (]: On test.wiki_transform.not_null_fct_edits_per_minute_edit_count.299c0c3bd2: Close
+[0m19:00:21.505874 [debug] [Thread-3 (]: On test.wiki_transform.not_null_fct_edits_per_minute_minute.d76c8ab6e9: Close
+[0m19:00:21.507063 [info ] [Thread-2 (]: 2 of 7 PASS not_null_fct_edits_per_minute_edit_count ........................... [[32mPASS[0m in 0.24s]
+[0m19:00:21.508988 [debug] [Thread-2 (]: Finished running node test.wiki_transform.not_null_fct_edits_per_minute_edit_count.299c0c3bd2
+[0m19:00:21.508123 [info ] [Thread-3 (]: 3 of 7 PASS not_null_fct_edits_per_minute_minute ............................... [[32mPASS[0m in 0.24s]
+[0m19:00:21.510343 [debug] [Thread-2 (]: Began running node test.wiki_transform.not_null_stg_wiki_events_id.8261247e26
+[0m19:00:21.511694 [debug] [Thread-3 (]: Finished running node test.wiki_transform.not_null_fct_edits_per_minute_minute.d76c8ab6e9
+[0m19:00:21.512476 [info ] [Thread-2 (]: 5 of 7 START test not_null_stg_wiki_events_id .................................. [RUN]
+[0m19:00:21.513406 [debug] [Thread-3 (]: Began running node test.wiki_transform.unique_stg_wiki_events_event_id.0376938a8a
+[0m19:00:21.514312 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.wiki_transform.not_null_fct_edits_per_minute_edit_count.299c0c3bd2, now test.wiki_transform.not_null_stg_wiki_events_id.8261247e26)
+[0m19:00:21.515140 [info ] [Thread-3 (]: 6 of 7 START test unique_stg_wiki_events_event_id .............................. [RUN]
+[0m19:00:21.515850 [debug] [Thread-2 (]: Began compiling node test.wiki_transform.not_null_stg_wiki_events_id.8261247e26
+[0m19:00:21.517002 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly test.wiki_transform.not_null_fct_edits_per_minute_minute.d76c8ab6e9, now test.wiki_transform.unique_stg_wiki_events_event_id.0376938a8a)
+[0m19:00:21.527150 [debug] [Thread-2 (]: Writing injected SQL for node "test.wiki_transform.not_null_stg_wiki_events_id.8261247e26"
+[0m19:00:21.528498 [debug] [Thread-3 (]: Began compiling node test.wiki_transform.unique_stg_wiki_events_event_id.0376938a8a
+[0m19:00:21.542526 [debug] [Thread-3 (]: Writing injected SQL for node "test.wiki_transform.unique_stg_wiki_events_event_id.0376938a8a"
+[0m19:00:21.545832 [debug] [Thread-2 (]: Began executing node test.wiki_transform.not_null_stg_wiki_events_id.8261247e26
+[0m19:00:21.552514 [debug] [Thread-2 (]: Writing runtime sql for node "test.wiki_transform.not_null_stg_wiki_events_id.8261247e26"
+[0m19:00:21.556945 [debug] [Thread-3 (]: Began executing node test.wiki_transform.unique_stg_wiki_events_event_id.0376938a8a
+[0m19:00:21.566320 [debug] [Thread-3 (]: Writing runtime sql for node "test.wiki_transform.unique_stg_wiki_events_event_id.0376938a8a"
+[0m19:00:21.574735 [debug] [Thread-2 (]: Using postgres connection "test.wiki_transform.not_null_stg_wiki_events_id.8261247e26"
+[0m19:00:21.576313 [debug] [Thread-2 (]: On test.wiki_transform.not_null_stg_wiki_events_id.8261247e26: /* {"app": "dbt", "dbt_version": "1.12.0rc2", "profile_name": "wiki_transform", "target_name": "dev", "node_id": "test.wiki_transform.not_null_stg_wiki_events_id.8261247e26"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select id
+from "wiki"."analytics"."stg_wiki_events"
+where id is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m19:00:21.577477 [debug] [Thread-2 (]: Opening a new connection, currently in state closed
+[0m19:00:21.578707 [debug] [Thread-3 (]: Using postgres connection "test.wiki_transform.unique_stg_wiki_events_event_id.0376938a8a"
+[0m19:00:21.580329 [debug] [Thread-3 (]: On test.wiki_transform.unique_stg_wiki_events_event_id.0376938a8a: /* {"app": "dbt", "dbt_version": "1.12.0rc2", "profile_name": "wiki_transform", "target_name": "dev", "node_id": "test.wiki_transform.unique_stg_wiki_events_event_id.0376938a8a"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+select
+    event_id as unique_field,
+    count(*) as n_records
+
+from "wiki"."analytics"."stg_wiki_events"
+where event_id is not null
+group by event_id
+having count(*) > 1
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m19:00:21.581554 [debug] [Thread-3 (]: Opening a new connection, currently in state closed
+[0m19:00:21.818627 [debug] [Thread-2 (]: SQL status: SELECT 1 in 0.241 seconds
+[0m19:00:21.823440 [debug] [Thread-2 (]: On test.wiki_transform.not_null_stg_wiki_events_id.8261247e26: ROLLBACK
+[0m19:00:21.825896 [debug] [Thread-2 (]: On test.wiki_transform.not_null_stg_wiki_events_id.8261247e26: Close
+[0m19:00:21.828598 [info ] [Thread-2 (]: 5 of 7 PASS not_null_stg_wiki_events_id ........................................ [[32mPASS[0m in 0.31s]
+[0m19:00:21.830818 [debug] [Thread-2 (]: Finished running node test.wiki_transform.not_null_stg_wiki_events_id.8261247e26
+[0m19:00:21.832447 [debug] [Thread-2 (]: Began running node test.wiki_transform.unique_stg_wiki_events_id.68adc2ac26
+[0m19:00:21.833932 [info ] [Thread-2 (]: 7 of 7 START test unique_stg_wiki_events_id .................................... [RUN]
+[0m19:00:21.836000 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.wiki_transform.not_null_stg_wiki_events_id.8261247e26, now test.wiki_transform.unique_stg_wiki_events_id.68adc2ac26)
+[0m19:00:21.837400 [debug] [Thread-2 (]: Began compiling node test.wiki_transform.unique_stg_wiki_events_id.68adc2ac26
+[0m19:00:21.847818 [debug] [Thread-2 (]: Writing injected SQL for node "test.wiki_transform.unique_stg_wiki_events_id.68adc2ac26"
+[0m19:00:21.861554 [debug] [Thread-2 (]: Began executing node test.wiki_transform.unique_stg_wiki_events_id.68adc2ac26
+[0m19:00:21.867249 [debug] [Thread-2 (]: Writing runtime sql for node "test.wiki_transform.unique_stg_wiki_events_id.68adc2ac26"
+[0m19:00:21.884167 [debug] [Thread-2 (]: Using postgres connection "test.wiki_transform.unique_stg_wiki_events_id.68adc2ac26"
+[0m19:00:21.886536 [debug] [Thread-2 (]: On test.wiki_transform.unique_stg_wiki_events_id.68adc2ac26: /* {"app": "dbt", "dbt_version": "1.12.0rc2", "profile_name": "wiki_transform", "target_name": "dev", "node_id": "test.wiki_transform.unique_stg_wiki_events_id.68adc2ac26"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+select
+    id as unique_field,
+    count(*) as n_records
+
+from "wiki"."analytics"."stg_wiki_events"
+where id is not null
+group by id
+having count(*) > 1
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m19:00:21.888708 [debug] [Thread-2 (]: Opening a new connection, currently in state closed
+[0m19:00:21.942718 [debug] [Thread-4 (]: SQL status: SELECT 1 in 0.459 seconds
+[0m19:00:21.943925 [debug] [Thread-1 (]: SQL status: SELECT 1 in 0.461 seconds
+[0m19:00:21.947022 [debug] [Thread-4 (]: On test.wiki_transform.not_null_stg_wiki_events_event_id.a383658aa6: ROLLBACK
+[0m19:00:21.950420 [debug] [Thread-1 (]: On test.wiki_transform.accepted_values_stg_wiki_events_event_type__edit__new.05ec114aff: ROLLBACK
+[0m19:00:21.953546 [debug] [Thread-4 (]: On test.wiki_transform.not_null_stg_wiki_events_event_id.a383658aa6: Close
+[0m19:00:21.955226 [debug] [Thread-1 (]: On test.wiki_transform.accepted_values_stg_wiki_events_event_type__edit__new.05ec114aff: Close
+[0m19:00:21.957153 [info ] [Thread-4 (]: 4 of 7 PASS not_null_stg_wiki_events_event_id .................................. [[32mPASS[0m in 0.68s]
+[0m19:00:21.960425 [debug] [Thread-4 (]: Finished running node test.wiki_transform.not_null_stg_wiki_events_event_id.a383658aa6
+[0m19:00:21.959081 [info ] [Thread-1 (]: 1 of 7 PASS accepted_values_stg_wiki_events_event_type__edit__new .............. [[32mPASS[0m in 0.69s]
+[0m19:00:21.962870 [debug] [Thread-1 (]: Finished running node test.wiki_transform.accepted_values_stg_wiki_events_event_type__edit__new.05ec114aff
+[0m19:00:22.076455 [debug] [Thread-3 (]: SQL status: SELECT 1 in 0.495 seconds
+[0m19:00:22.079408 [debug] [Thread-3 (]: On test.wiki_transform.unique_stg_wiki_events_event_id.0376938a8a: ROLLBACK
+[0m19:00:22.081004 [debug] [Thread-3 (]: On test.wiki_transform.unique_stg_wiki_events_event_id.0376938a8a: Close
+[0m19:00:22.082529 [info ] [Thread-3 (]: 6 of 7 PASS unique_stg_wiki_events_event_id .................................... [[32mPASS[0m in 0.57s]
+[0m19:00:22.084360 [debug] [Thread-3 (]: Finished running node test.wiki_transform.unique_stg_wiki_events_event_id.0376938a8a
+[0m19:00:22.145843 [debug] [Thread-2 (]: SQL status: SELECT 1 in 0.257 seconds
+[0m19:00:22.148254 [debug] [Thread-2 (]: On test.wiki_transform.unique_stg_wiki_events_id.68adc2ac26: ROLLBACK
+[0m19:00:22.149316 [debug] [Thread-2 (]: On test.wiki_transform.unique_stg_wiki_events_id.68adc2ac26: Close
+[0m19:00:22.150760 [info ] [Thread-2 (]: 7 of 7 PASS unique_stg_wiki_events_id .......................................... [[32mPASS[0m in 0.31s]
+[0m19:00:22.152345 [debug] [Thread-2 (]: Finished running node test.wiki_transform.unique_stg_wiki_events_id.68adc2ac26
+[0m19:00:22.156549 [debug] [MainThread]: On master: COMMIT
+[0m19:00:22.157890 [debug] [MainThread]: Using postgres connection "master"
+[0m19:00:22.158852 [debug] [MainThread]: On master: COMMIT
+[0m19:00:22.159591 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m19:00:22.169398 [debug] [MainThread]: SQL status: COMMIT in 0.010 seconds
+[0m19:00:22.171250 [debug] [MainThread]: On master: Close
+[0m19:00:22.173020 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m19:00:22.173860 [debug] [MainThread]: Connection 'test.wiki_transform.accepted_values_stg_wiki_events_event_type__edit__new.05ec114aff' was properly closed.
+[0m19:00:22.174531 [debug] [MainThread]: Connection 'test.wiki_transform.unique_stg_wiki_events_id.68adc2ac26' was properly closed.
+[0m19:00:22.175150 [debug] [MainThread]: Connection 'test.wiki_transform.unique_stg_wiki_events_event_id.0376938a8a' was properly closed.
+[0m19:00:22.175797 [debug] [MainThread]: Connection 'test.wiki_transform.not_null_stg_wiki_events_event_id.a383658aa6' was properly closed.
+[0m19:00:22.176565 [info ] [MainThread]: 
+[0m19:00:22.177318 [info ] [MainThread]: Finished running 7 data tests in 0 hours 0 minutes and 1.04 seconds (1.04s).
+[0m19:00:22.179471 [debug] [MainThread]: Command end result
+[0m19:00:22.251879 [debug] [MainThread]: Wrote artifact WritableManifest to /opt/airflow/transform/target/manifest.json
+[0m19:00:22.260851 [debug] [MainThread]: Wrote artifact SemanticManifest to /opt/airflow/transform/target/semantic_manifest.json
+[0m19:00:22.268406 [debug] [MainThread]: Wrote artifact OsiDocument to /opt/airflow/transform/target/osi_document.json
+[0m19:00:22.285352 [debug] [MainThread]: Wrote artifact RunExecutionResult to /opt/airflow/transform/target/run_results.json
+[0m19:00:22.286925 [info ] [MainThread]: 
+[0m19:00:22.287947 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m19:00:22.288894 [info ] [MainThread]: 
+[0m19:00:22.289713 [info ] [MainThread]: Done. PASS=7 WARN=0 ERROR=0 SKIP=0 NO-OP=0 REUSED=0 TOTAL=7
+[0m19:00:22.291560 [debug] [MainThread]: Resource report: {"command_name": "test", "command_success": true, "command_wall_clock_time": 2.264935, "process_in_blocks": "0", "process_kernel_time": 0.624083, "process_mem_max_rss": "138160", "process_out_blocks": "0", "process_user_time": 3.704239}
+[0m19:00:22.292541 [debug] [MainThread]: Command `dbt test` succeeded at 19:00:22.292389 after 2.27 seconds
+[0m19:00:22.293513 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x73b8f8e9f050>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x73b8f2f73b60>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x73b8f5500da0>]}
+[0m19:00:22.294211 [debug] [MainThread]: Flushing usage events
+[0m19:00:22.607814 [debug] [MainThread]: An error was encountered while trying to flush usage events
