@@ -25,3 +25,32 @@ services:
       KAFKA_CLUSTERS_0_BOOTSTRAPSERVERS: kafka:19092
     depends_on:
       - kafka
+  postgres:
+    image: postgres:16
+    container_name: postgres
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: pipeline
+      POSTGRES_PASSWORD: pipeline
+      POSTGRES_DB: wiki
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+      - ./db/init.sql:/docker-entrypoint-initdb.d/init.sql
+  airflow:
+    image: apache/airflow:2.10.4
+    container_name: airflow
+    ports:
+      - "8081:8080"
+    environment:
+      AIRFLOW__CORE__LOAD_EXAMPLES: "false"
+      DBT_HOST: postgres
+      _PIP_ADDITIONAL_REQUIREMENTS: dbt-postgres
+    volumes:
+      - ./orchestration/dags:/opt/airflow/dags
+      - ./transform:/opt/airflow/transform
+    command: standalone
+    depends_on:
+      - postgres
+volumes:
+  pgdata:

@@ -3,7 +3,7 @@ wiki_transform:
   outputs:
     dev:
       type: postgres
-      host: localhost
+      host: "{{ env_var('DBT_HOST', 'localhost') }}"
       port: 5432
       user: pipeline
       password: pipeline
