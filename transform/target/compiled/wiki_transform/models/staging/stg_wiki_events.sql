@@ -1,5 +1,16 @@
+with ranked as (
+    select
+        *,
+        row_number() over (
+            partition by event->'meta'->>'id'
+            order by ingested_at
+        ) as rn
+    from "wiki"."raw"."wiki_events"
+    where event->>'type' in ('edit', 'new')
+)
 select
     id,
+    event->'meta'->>'id'                        as event_id,
     event->>'title'                              as title,
     event->>'wiki'                               as wiki,
     event->>'type'                               as event_type,
@@ -9,5 +20,5 @@ select
     (event->'length'->>'new')::int
       - coalesce((event->'length'->>'old')::int, 0) as bytes_changed,
     ingested_at
-from "wiki"."raw"."wiki_events"
-where event->>'type' in ('edit', 'new')
+from ranked
+where rn = 1

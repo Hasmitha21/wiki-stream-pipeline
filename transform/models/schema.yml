@@ -6,6 +6,10 @@ models:
         tests:
           - not_null
           - unique
+      - name: event_id
+        tests:
+          - not_null
+          - unique
       - name: event_type
         tests:
           - accepted_values:
