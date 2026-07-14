@@ -53,3 +53,4 @@ docker compose up -d
 python producer/producer.py
 python consumer/consumer.py
 streamlit run dashboard/app.py
+
