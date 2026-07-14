@@ -1,0 +1,20 @@
+version: 2
+models:
+  - name: stg_wiki_events
+    columns:
+      - name: id
+        tests:
+          - not_null
+          - unique
+      - name: event_type
+        tests:
+          - accepted_values:
+              values: ['edit', 'new']
+  - name: fct_edits_per_minute
+    columns:
+      - name: minute
+        tests:
+          - not_null
+      - name: edit_count
+        tests:
+          - not_null

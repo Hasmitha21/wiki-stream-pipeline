@@ -1,0 +1,12 @@
+wiki_transform:
+  target: dev
+  outputs:
+    dev:
+      type: postgres
+      host: localhost
+      port: 5432
+      user: pipeline
+      password: pipeline
+      dbname: wiki
+      schema: analytics
+      threads: 4

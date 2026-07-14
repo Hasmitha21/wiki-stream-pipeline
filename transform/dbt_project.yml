@@ -1,0 +1,10 @@
+name: wiki_transform
+version: "1.0"
+profile: wiki_transform
+model-paths: ["models"]
+models:
+  wiki_transform:
+    staging:
+      +materialized: view
+    marts:
+      +materialized: table
