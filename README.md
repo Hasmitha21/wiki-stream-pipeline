@@ -49,8 +49,12 @@ which is effectively exactly-once at the database level:
   A failed test halts the DAG before bad data reaches the dashboard.
 
 ## Running locally
-docker compose up -d
-python producer/producer.py
-python consumer/consumer.py
-streamlit run dashboard/app.py
+** Setup **:
+```python -m venv .venv```
+```pip install -r requirements.txt```
+
+```docker compose up -d```
+```python producer/producer.py```
+```python consumer/consumer.py```
+```streamlit run dashboard/app.py```
 
