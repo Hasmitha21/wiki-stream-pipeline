@@ -6,6 +6,10 @@ Wikimedia EventStreams → Kafka → Postgres → dbt → Airflow → Streamlit.
 ## Architecture
 ![img.png](img.png)
 
+## Final Dashboard Sample:
+<img width="2559" height="1373" alt="image" src="https://github.com/user-attachments/assets/07599855-6934-4030-af25-f77e381ce8bb" />
+
+
 ## Stack
 Kafka (KRaft) · Postgres · dbt · Airflow · Streamlit · Docker Compose · Python
 
@@ -49,4 +53,3 @@ docker compose up -d
 python producer/producer.py
 python consumer/consumer.py
 streamlit run dashboard/app.py
-
